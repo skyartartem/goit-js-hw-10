@@ -20,10 +20,10 @@ function onInputName(evt) {
     refs.list.innerHTML = '';
     return;
   }
-  
+
   fetchCountries(name)
     .then(data => {
-      console.dir(data);
+      // console.dir(data);
       if (data.length > 20) {
         Notify.info(
           'Too many matches found. Please enter a more specific name.'
@@ -71,6 +71,6 @@ function createMarkupCountries(data) {
 function createErrorMessage(err) {
   refs.list.innerHTML = '';
   refs.info.innerHTML = '';
-  refs.input.value = ""
+  // refs.input.value = ""
   Notify.failure(`Oops, there is no country with that name`);
 }
